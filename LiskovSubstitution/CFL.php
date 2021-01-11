@@ -2,10 +2,12 @@
 
 namespace MMBakker\SolidDesignPrinciples\LiskovSubstitution;
 
+use LightInterface;
+
 /**
  * "spaarlamp"
  */
-class CFL
+class CFL implements LightInterface
 {
     public function printName(): void
     {

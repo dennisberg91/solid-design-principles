@@ -2,10 +2,12 @@
 
 namespace MMBakker\SolidDesignPrinciples\LiskovSubstitution;
 
+use LightInterface;
+
 /**
  * "LED"
  */
-class LED
+class LED implements LightInterface
 {
     public function printName(): void
     {

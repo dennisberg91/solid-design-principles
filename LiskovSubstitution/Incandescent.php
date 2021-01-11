@@ -2,10 +2,12 @@
 
 namespace MMBakker\SolidDesignPrinciples\LiskovSubstitution;
 
+use LightInterface;
+
 /**
  * "gloeilamp"
  */
-class Incandescent
+class Incandescent implements LightInterface
 {
     public function printName(): void
     {

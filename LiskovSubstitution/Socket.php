@@ -2,15 +2,29 @@
 
 namespace MMBakker\SolidDesignPrinciples\LiskovSubstitution;
 
-class Socket
+use LightInterface;
+use SocketInterface;
+
+class Socket implements SocketInterface
 {
+    private LightInterface $light;
+    private bool $state;
+
     public function powerOn(): void
     {
-        // powering something
+        $this->state = true;
     }
 
     public function powerOff(): void
     {
-        // removing power
+        $this->state = false;
+    }
+
+    /**
+     * @param LightInterface $light
+     */
+    public function setLight(LightInterface $light): void
+    {
+        $this->light = $light;
     }
 }
